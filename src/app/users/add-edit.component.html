@@ -1,0 +1,49 @@
+﻿<h1>Add User</h1>
+<form (ngSubmit)="enviar()" [formGroup]="myForm">
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Nombre</label>
+            <input type="text"  class="form-control" formControlName="nombre"/>
+            <span class="form-text text-danger"
+            *ngIf="isValidField('nombre')">
+         	Debe de ser de 4 letras como minimo
+            </span>
+            
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">Correo</label>
+            <input type="text" class="form-control" formControlName="email"  />
+            <span class="form-text text-danger"
+        *ngIf="isValidField('email')">
+         	Email incorrecto
+       </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Rol</label><br>
+            <input type="radio" formControlName="rol" value="ADMIN_ROLE"/>Admin rol<br>
+            <input type="radio" formControlName="rol" value="USER_ROLE"/>User rol
+            <span class="form-text text-danger"
+        *ngIf="isValidField('rol')"><br>
+         	Tiene que elegir uno
+       </span>
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">
+                Password
+            </label>
+            <input type="password" class="form-control" formControlName="password" />
+            <span class="form-text text-danger"
+        *ngIf="isValidField('password')">
+         	Password incorrecto
+       </span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary">
+            Save
+        </button>
+        <a routerLink="/users" class="btn btn-link">Cancel</a>
+    </div>
+</form>

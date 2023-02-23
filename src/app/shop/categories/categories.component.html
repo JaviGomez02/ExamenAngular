@@ -1,0 +1,7 @@
+<br><h1>Lista de categorias</h1><br>
+<button type="button" [routerLink]="['/shop/add']" class="btn btn-success">Añadir categoria</button><br><br>
+<ul *ngFor="let item of lista">
+    <li><a style="color:rgb(131, 131, 255); 
+                    cursor: pointer;
+                    text-decoration: underline;" (click)="verProductos(item._id)">{{item.nombre}}</a></li>
+</ul>

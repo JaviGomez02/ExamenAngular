@@ -1,0 +1,12 @@
+
+<div class="container">
+    <h1>Añadir categoria</h1><br><br>
+    <form (ngSubmit)="addCategoria()" [formGroup]="myForm">
+        <input type="nombre" placeholder="Nombre de la categoria" name="nombre" formControlName="nombreCategoria" required><br><br>
+        <span class="form-text text-danger"
+        *ngIf="isValidField('nombreCategoria')">
+         Debe de ser de 4 letras como minimo
+        </span><br>
+        <button type="submit" class="btn btn-success">Añadir</button>
+    </form>
+</div>
